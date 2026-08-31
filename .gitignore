@@ -1,0 +1,15 @@
+# data (regenerate via notebooks, keep repo light)
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+venv/
+.venv/
+
+# OS
+.DS_Store
