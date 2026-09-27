@@ -9,10 +9,9 @@ and Global Financial Development (GFDR/GFDD) databases.
 import pandas as pd
 import wbgapi as wb
 
-# --- Indicator codes -------------------------------------------------------
 
-GFDD_DB = 32   # Global Financial Development
-WDI_DB = 2     # World Development Indicators
+GFDD_DB = 32   
+WDI_DB = 2     
 
 INDICATORS = {
     "syndicated_loans_gdp": "GFDD.DM.12",
@@ -55,12 +54,11 @@ def add_country_metadata(panel: pd.DataFrame) -> pd.DataFrame:
     Attach income group and region using wbgapi's economy metadata,
     and drop aggregate/regional codes so only individual countries remain.
     """
-    meta = wb.economy.DataFrame()  # indexed by economy code
+    meta = wb.economy.DataFrame()  
     meta = meta.reset_index().rename(columns={"id": "economy"})
     meta = meta[["economy", "name", "region", "incomeLevel"]]
 
     merged = panel.merge(meta, on="economy", how="left")
-    # Aggregates have region == "Aggregates" in wbgapi metadata; drop them
     merged = merged[merged["region"] != "Aggregates"].copy()
     return merged
 
