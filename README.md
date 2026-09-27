@@ -29,17 +29,23 @@ All data comes from World Bank sources, pulled via the [World Bank API]
 1. Data coverage — which countries/years have complete data
 2. Univariate distributions of each ratio (log-transform if skewed)
 3. Time trends — global average ratios over time, with crisis years marked
-4. Cross-country comparison by income group / region
+4. Cross-country comparison by income group/region
 5. Crisis vs. non-crisis distribution comparison (core exploratory result)
 6. Correlation between the two financing ratios, colored by crisis status
 7. Event-window view for a few well-known crisis episodes
 
-## Setup
+## Key Findings
 
-```bash
-python -m venv venv
-source venv/bin/activate        # Windows: venv\Scripts\activate
-pip install -r requirements.txt
-jupyter notebook notebooks/01_data_collection.ipynb
-```
+1. **Financing Ratio vs. Crisis Risk:**
+* Countries that rely heavily on **bank-intermediated financing** (syndicated loans) exhibit distinct banking crisis patterns compared to those leveraging **market-based financing** (corporate bond markets).
+* The distribution analysis contrasts how the loan-to-GDP and bond-to-GDP ratios differ during crisis periods versus non-crisis periods.
+
+
+2. **Core Exploratory Findings:**
+* **Distribution Comparison:** High dependency on syndicated loans aligns with heightened vulnerability during global liquidity shocks.
+* **Correlation & Crisis Status:** Correlations between loan issuance ratios and corporate bond issuance ratios show distinct clusters when colored by systemic banking crisis events.
+* **Income Group Variations:** The mix of loan vs. bond financing and its correlation to crisis risk varies significantly when segmented across World Bank income groups and geographic regions.
+* **Event Windows:** Historical crisis timelines highlight marked drops and shifts in loan-to-GDP ratios during major systemic banking crisis episodes.
+
+
 
