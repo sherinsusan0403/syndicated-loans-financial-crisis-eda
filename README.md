@@ -22,31 +22,9 @@ All data comes from World Bank sources, pulled via the [World Bank API]
 | Banking crisis dummy | `GFDD.OI.19` | GFDR (Laeven & Valencia) | 1 = systemic banking crisis, 0 = none |
 | GDP, GDP growth, income group | various | WDI | Context / controls |
 
-**Coverage note:** the syndicated loan and bond issuance series (Dealogic-based)
-only cover ~2000–2021 and are patchier for smaller/lower-income economies.
-The EDA explicitly profiles this coverage before drawing any conclusions.
 
-## Project structure
 
 ```
-financial-structure-crisis-risk/
-├── README.md
-├── requirements.txt
-├── data/
-│   ├── raw/              # unmodified API pulls (gitignored, regenerate via notebook 01)
-│   └── processed/        # cleaned/merged panel used for analysis
-├── notebooks/
-│   ├── 01_data_collection.ipynb   # pull WDI + GFDR series via wbgapi
-│   ├── 02_data_cleaning.ipynb     # merge, reshape to panel, handle missing data
-│   ├── 03_eda.ipynb               # exploratory data analysis (see below)
-│   └── 04_analysis.ipynb          # crisis vs non-crisis comparison, correlations
-├── src/
-│   └── data_utils.py      # reusable fetch/clean functions
-└── outputs/
-    └── figures/           # exported charts for README / portfolio site
-```
-
-## EDA plan (notebook 03)
 
 1. Data coverage — which countries/years have complete data
 2. Univariate distributions of each ratio (log-transform if skewed)
@@ -65,11 +43,3 @@ pip install -r requirements.txt
 jupyter notebook notebooks/01_data_collection.ipynb
 ```
 
-## Status
-
-Scaffold + starter notebooks generated. Run notebook 01 to pull live data
-(requires internet access to the World Bank API), then work through 02 → 04.
-
-## License
-
-MIT
