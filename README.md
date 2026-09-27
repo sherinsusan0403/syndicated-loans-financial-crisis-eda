@@ -33,6 +33,7 @@ All data comes from World Bank sources, pulled via the [World Bank API]
 5. Crisis vs. non-crisis distribution comparison (core exploratory result)
 6. Correlation between the two financing ratios, colored by crisis status
 7. Event-window view for a few well-known crisis episodes
+```
 
 ## Key Findings
 
